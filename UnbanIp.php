@@ -19,9 +19,10 @@ class UnbanIp extends \ExternalModules\AbstractExternalModule
         {
             $sql = "DELETE FROM redcap_ip_banned WHERE ip ='$ip' LIMIT 1";
             $this->query($sql);
+            $rowsAffected = db_affected_rows();
             if ($rowsAffected > 0) 
             {
-                REDCap::logEvent("Unbanned IP Address", "IP Address $ip unsuspended", $sql);
+                REDCap::logEvent("Unbanned IP Address $ip", null, $sql);
                 return TRUE;
             }
             else
@@ -40,7 +41,7 @@ class UnbanIp extends \ExternalModules\AbstractExternalModule
         ?>
         <style type="text/css">#pagecontent { margin-top: 70px; }</style>
         <?php if ($_GET["success"] == "1"): ?>
-            <div class="green">IP Address unsuspended successfully</div>
+            <div class="green" style="margin-bottom:20px">IP Address unsuspended successfully</div>
         <?php endif; ?>
         <div style="width: 70%; margin: auto;">
             <h2 style="text-align: center">Unban IP Addresses</h2>

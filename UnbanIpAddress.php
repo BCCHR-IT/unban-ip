@@ -4,7 +4,7 @@ $success = $unban_ip->unbanIpAddress();
 
 if ($success === TRUE)
 {
-    $unban_ip->getUrl("index.php");
+    header("Location: " . $unban_ip->getUrl("index.php?success=1"));
 }
 else
 {

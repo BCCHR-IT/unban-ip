@@ -1,7 +1,7 @@
 {
     "name": "Unban IP",
     "namespace": "BCCHR\\UnbanIp",
-    "description": "This module allows you to unban an ip address that has been banned by REDCap.",
+    "description": "This module allows you to unban an IP address that has been banned by REDCap.",
     "authors": [
         {
             "name": "Ashley Lee",
@@ -14,7 +14,7 @@
             {
                 "name": "Unban IP",
                 "url": "index.php",
-                "icon": "link"
+                "icon": "computer"
             }
         ]
     },
