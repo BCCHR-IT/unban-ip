@@ -1,0 +1,27 @@
+{
+    "name": "Unban IP",
+    "namespace": "BCCHR\\UnbanIp",
+    "description": "This module allows you to unban an ip address that has been banned by REDCap.",
+    "authors": [
+        {
+            "name": "Ashley Lee",
+            "email": "alee2@bcchr.ca",
+            "institution": "BC Children's Hospital Research Institute"
+        }
+    ],
+    "links": {
+        "control-center": [
+            {
+                "name": "Unban IP",
+                "url": "index.php",
+                "icon": "link"
+            }
+        ]
+    },
+    "compatibility": {
+        "php-version-min": "",
+        "php-version-max": "",
+        "redcap-version-min": "8.5.14",
+        "redcap-version-max": ""
+    }
+}
