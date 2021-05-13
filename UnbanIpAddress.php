@@ -12,7 +12,7 @@ else
     $page->PrintHeaderExt();
     include APP_PATH_VIEWS . 'HomeTabs.php';
     ?>
-    <div class="red" style="margin-bottom:20px">
+    <div class="red" style="margin-top:50px; margin-bottom:50px">
         <?php print $success; ?>
     </div>
     <?php

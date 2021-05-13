@@ -14,7 +14,7 @@
             {
                 "name": "Unban IP",
                 "url": "index.php",
-                "icon": "computer"
+                "icon": "fas fa-server"
             }
         ]
     },
@@ -23,5 +23,6 @@
         "php-version-max": "",
         "redcap-version-min": "8.5.14",
         "redcap-version-max": ""
-    }
+    },
+    "framework-version": 3
 }

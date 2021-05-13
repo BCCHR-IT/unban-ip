@@ -13,16 +13,16 @@ class UnbanIp extends \ExternalModules\AbstractExternalModule
 
     public function unbanIpAddress()
     {
-        $errors = array();
         $ip = $_POST["ipaddress"];
         if (filter_var($ip, FILTER_VALIDATE_IP))
         {
-            $sql = "DELETE FROM redcap_ip_banned WHERE ip ='$ip' LIMIT 1";
-            $this->query($sql);
-            $rowsAffected = db_affected_rows();
-            if ($rowsAffected > 0) 
+            $query = $this->framework->createQuery();
+            $query->add("DELETE FROM redcap_ip_banned WHERE ip = ? LIMIT 1", [$ip]);
+            $query_result = $query->execute();
+
+            if ($query->affected_rows > 0) 
             {
-                REDCap::logEvent("Unbanned IP Address $ip", null, $sql);
+                REDCap::logEvent("Unbanned IP Address $ip", null, "DELETE FROM redcap_ip_banned WHERE ip = $ip LIMIT 1");
                 return TRUE;
             }
             else
@@ -41,9 +41,9 @@ class UnbanIp extends \ExternalModules\AbstractExternalModule
         ?>
         <style type="text/css">#pagecontent { margin-top: 70px; }</style>
         <?php if ($_GET["success"] == "1"): ?>
-            <div class="green" style="margin-bottom:20px">IP Address unsuspended successfully</div>
+            <div class="green" style="margin-top:50px; margin-bottom:20px">IP Address unsuspended successfully</div>
         <?php endif; ?>
-        <div style="width: 70%; margin: auto;">
+        <div style="width: 70%; margin:auto;">
             <h2 style="text-align: center">Unban IP Addresses</h2>
             <form action="<?php print $this->getUrl("UnbanIpAddress.php"); ?>" method="post">
                 <div class="form-group" style="margin:10px 0 20px 0">
