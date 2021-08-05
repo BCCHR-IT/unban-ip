@@ -13,7 +13,7 @@ else
     include APP_PATH_VIEWS . 'HomeTabs.php';
     ?>
     <div class="red" style="margin-top:50px; margin-bottom:50px">
-        <?php print $success; ?>
+        <?php print htmlspecialchars($success, ENT_QUOTES); ?>
     </div>
     <?php
     $unban_ip = new \BCCHR\UnbanIp\UnbanIp();
